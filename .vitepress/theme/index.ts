@@ -3,13 +3,21 @@
 import { defineAsyncComponent, h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import Layout from './components/Layout.vue'
 import './style.css'
 
 export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
+        // https://vitepress.dev/guide/extending-default-theme#layout-slots
+        // 插槽：只在首页渲染 PostList
+      'layout-top': () => {
+        if (typeof window !== 'undefined' && location.pathname === '/') {
+          return h(Layout)
+        }
+        return null
+      }
     })
   },
   enhanceApp({ app, router, siteData }) {
