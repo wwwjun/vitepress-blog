@@ -3,7 +3,8 @@
 import { defineAsyncComponent, h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import Layout from './components/Layout.vue'
+// import Layout from './components/Layout.vue'
+
 import './style.css'
 
 export default {
@@ -14,7 +15,7 @@ export default {
         // 插槽：只在首页渲染 PostList
       'layout-top': () => {
         if (typeof window !== 'undefined' && location.pathname === '/') {
-          return h(Layout)
+          return h(import.meta.glob('./components/Layout.vue'))
         }
         return null
       }

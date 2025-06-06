@@ -1,5 +1,7 @@
 ---
+title: test vitepress
 outline: deep
+date: 2025-05-06
 ---
 
 # Runtime API Examples
@@ -26,7 +28,6 @@ const { theme, page, frontmatter } = useData()
 ### Page Frontmatter
 <pre>{{ frontmatter }}</pre>
 ```
-
 <script setup>
 import { useData } from 'vitepress'
 

@@ -4,13 +4,13 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
     title: "My Awesome Project",
     description: "A VitePress Site",
-    srcDir: "pages",
+    // srcDir: "pages",
     cleanUrls: true,
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
-            { text: 'Home', link: 'index' },
-            { text: 'About', link: '/about' }
+            { text: 'Home', link: '/' },
+            { text: 'About', link: '/pages/about' }
         ],
 
         // sidebar: [
